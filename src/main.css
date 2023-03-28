@@ -1,0 +1,219 @@
+@import "home.css";
+
+:root {
+  --bg-primary: #0f0f0f;
+  --text-primary: #f1f1f1;
+  --el-grey: rgb(48, 48, 48);
+  --wi: 656px; /* width to less display */
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 10px;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+.invert {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(99%) saturate(0%) hue-rotate(279deg) brightness(101%) contrast(101%);
+}
+
+#headerNav {
+  height: 56px;
+  flex: 100%;
+  color: var(--text-primary);
+  display: flex;
+  padding: 0 16px;
+  margin: 0;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.hNav {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+#group-menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 169px;
+  height: 56px;
+}
+
+#group-user {
+  display: flex;
+  flex-direction: row;
+  height: 56px;
+}
+
+#menu {
+  padding: 8px;
+}
+
+#logoIcon {
+  flex: 90px;
+  height: 20px;
+  padding: 18px 14px 18px 16px;
+}
+
+#logo-png {
+  display: flex;
+  justify-self: center;
+}
+
+#logo-png img {
+  height: 19px;
+  margin-right: 3px;
+}
+
+#logo-text {
+  font-size: 1.4rem;
+  font-family: "Trade Gothic LT Std", sans-serif;
+}
+
+#logo-lang {
+  position: relative;
+  top: -10px;
+  font-size: 10px;
+  margin-left: 1px;
+  color: rgb(170, 170, 170)
+}
+
+#searchBox {
+  display: flex;
+  flex-direction: row;
+  width: 728px;
+  flex: 2 0 75%;
+  box-sizing: border-box;
+  flex-grow: 0;
+  flex-shrink: 1;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+}
+
+#group-search {
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  width: 100%;
+}
+
+#group-input {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid var(--el-grey);
+  border-radius: 25px;
+  margin-left: 40px;
+  width: 100%;
+  max-width: 636px;
+
+}
+
+#search-input {
+  display: flex;
+  min-width: 100px;
+  padding: 0 6px;
+}
+
+#search-input input {
+  font-size: 16px;
+  display: flex;
+  appearance: none;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  padding: 0px 4px 0px 16px;
+
+}
+
+#lupa-div {
+  padding: 6px 18px 6px 20px;
+  display: flex;
+  justify-self: end;
+  border: 1px solid var(--el-grey);
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+#lupa {
+  opacity: 1;
+}
+
+#microphone {
+  display: flex;
+  width: 38px;
+  min-width: 38px;
+  background-color: rgba(48, 48, 48, 0.22);
+  border: 1px solid var(--el-grey);
+  border-radius: 50px;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+#microphone img {
+  width: 18px;
+  height: 20px;
+  align-self: center;
+}
+
+#group-user {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  height: 40px;
+  justify-content: end;
+}
+
+#settings {
+  display: flex;
+  align-items: center;
+}
+
+#settings img {
+  align-self: center;
+  height: 16px;
+  margin-right: 20px;
+}
+
+#sign-in {
+  display: flex;
+  height: 34px;
+  width: 100px;
+  border: 1px solid var(--el-grey);
+  border-radius: 25px;
+  align-self: center;
+  justify-content: center;
+}
+
+
+
+#sign-in-png {
+  display: flex;
+  align-self: center;
+  width: 23px;
+  height: 23px;
+  margin-right: 6px;
+  filter: brightness(0) saturate(100%) invert(58%) sepia(31%) saturate(4441%) hue-rotate(186deg) brightness(103%) contrast(102%);
+}
+
+#sign-in span {
+  align-self: center;
+  font-size: 14px;
+  color: rgb(62, 166, 255);
+  margin-right: 6px;
+}

@@ -1,0 +1,39 @@
+#container-home {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  height: 100vh;
+}
+
+#block-aside {
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  max-width: 240px;
+}
+
+#block-content {
+  display: flex;
+  width: 100%;
+}
+
+#previews {
+  display: flex;
+  overflow: scroll;
+}
+
+#links-p, links-s {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.link {
+  width: 240px;
+  height: 40px;
+}
+
+.link-img {
+  margin-right: 24px;
+  width: 24px;
+  height: 24px;
+}
