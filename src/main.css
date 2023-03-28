@@ -7,14 +7,16 @@
   --wi: 656px; /* width to less display */
 }
 
+html {
+  font-size: 10px;
+  font-family: Roboto, Arial, sans-serif;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+}
+
 body {
   padding: 0;
   margin: 0;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  font-size: 10px;
-  font-family: Roboto, Arial, sans-serif;
-  height: 100%;
 }
 
 #page {
@@ -97,7 +99,7 @@ body {
 }
 
 #logo-text {
-  font-size: 1.4rem;
+  font-size: 2.1rem;
   font-family: "Trade Gothic LT Std", sans-serif;
 }
 
@@ -105,7 +107,6 @@ body {
   position: relative;
   top: -10px;
   font-size: 10px;
-  margin-left: 1px;
   color: rgb(170, 170, 170)
 }
 
@@ -207,7 +208,7 @@ body {
   margin-right: 20px;
 }
 
-#sign-in {
+.sign-in {
   display: flex;
   height: 34px;
   width: 100px;
@@ -219,7 +220,7 @@ body {
 
 
 
-#sign-in-png {
+.sign-in-png {
   display: flex;
   align-self: center;
   width: 23px;
@@ -228,7 +229,7 @@ body {
   filter: brightness(0) saturate(100%) invert(58%) sepia(31%) saturate(4441%) hue-rotate(186deg) brightness(103%) contrast(102%);
 }
 
-#sign-in span {
+.sign-in span {
   align-self: center;
   font-size: 14px;
   color: rgb(62, 166, 255);
