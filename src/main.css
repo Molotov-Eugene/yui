@@ -194,7 +194,6 @@ body {
   align-items: center;
   flex-direction: row;
   height: 40px;
-  justify-content: end;
 }
 
 #settings {
@@ -217,8 +216,6 @@ body {
   align-self: center;
   justify-content: center;
 }
-
-
 
 .sign-in-png {
   display: flex;
