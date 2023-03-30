@@ -1,39 +1,42 @@
-$(document).ready(function() {
-  $('#main-content').load('home.html', function() {
-    const videoCard = `
-<div class=card-video>
-  <div class="video-title-picture-box">
-    <img class="video-title-picture" src="src/video/title.png" alt="video title picture" />
-  </div>
-  <div class="video-description-block">
-    <div class="user-avatar-box">
-      <img class="user-avatar" src="src/video/user-avatar.png" alt="user-avatar">
-    </div>
-    <div class="video-description">
-      <div class="video-title-box">
-        <span class="video-title-text">
-          Just walking around. Nothing interesting. Really. Skip it. Don't waste your time. Are you sure?.. I told you.
-        </span>
-      </div>
-      <div class="video-meta-box">
-        <div class="user-name">
-          Agent Smith
-        </div>
-        <div class="video-meta">
-          <div class="video-views">
-            892M views
-          </div>
-          <div class="video-age">
-            7 days ago
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="video-options">
-      <img class="video-options" src="src/img/vertical-dots.png" alt="options" />
-    </div>
-  </div>
-</div>`;
-    $('#previews').append($(videoCard.repeat(9)));
-  });
-});
+import {
+  videoCard,
+  suggestionCard,
+  comment,
+  vidos,
+  ucomment
+} from "./elements.js";
+
+const loadVideoPage = () => {
+  $.get( "video.html", ( data ) => {
+    $( "#main-content" ).empty().append( data );
+    $( "#video-suggestion-box" ).append( suggestionCard( vidos ).repeat( 35 ) );
+    $( "#comment-section" ).append( comment( ucomment ).repeat( 11 ) );
+    window.history.pushState( { html: data, pageTitle: "vidos" }, "", "video.html" );
+  } );
+};
+
+const loadHomePage = () => {
+  $.get( "home.html", ( data ) => {
+    $( "#main-content" ).empty().append( data );
+    $( "#previews" ).append( $( videoCard( vidos ).repeat( 12 ) ) );
+    $( ".card-video" ).click( loadVideoPage );
+    const innerHtml = document.getElementById( "main-content" ).innerHTML;
+    window.history.pushState( { html: innerHtml, pageTitle: "home" }, "", "" );
+  } );
+};
+
+$( document ).ready( () => {
+  window.onpopstate = ( e ) => {
+    switch ( e.state.pageTitle ) {
+      case "home":
+        loadHomePage();
+        break;
+      case "vidos":
+        loadVideoPage();
+        break;
+      default:
+        console.warn( "unknown page title" );
+    }
+  };
+  loadHomePage();
+} );
