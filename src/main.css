@@ -5,7 +5,7 @@
   --bg-primary: #0f0f0f;
   --text-primary: #f1f1f1;
   --el-grey: rgb(48, 48, 48);
-  --wi: 656px; /* width to less display */
+  --bl-grey: rgba(255, 255, 255, 0.1);
 }
 
 html {
@@ -143,18 +143,26 @@ body {
 
 #search-input {
   display: flex;
+  width: 100%;
   min-width: 100px;
   padding: 0 6px;
 }
 
 #search-input input {
+  width: 100%;
   font-size: 16px;
   display: flex;
   appearance: none;
   background-color: rgba(0, 0, 0, 0);
   border: none;
   padding: 0px 4px 0px 16px;
+}
 
+#search-input input:focus {
+  outline: 1px solid rgba(33, 130, 255, 0.8);
+  margin-left: -8px;
+  border-top-left-radius: 150px;
+  border-bottom-left-radius: 150px;
 }
 
 #lupa-div {

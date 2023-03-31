@@ -194,6 +194,14 @@
   max-height: 200px;
 }
 
+.video-options img {
+  display: flex;
+  margin-left: 12px;
+  margin-top: 12px;
+  width: 24px;
+  height: 24px;
+}
+
 .video-description-block {
   display: flex;
   flex-direction: row;
