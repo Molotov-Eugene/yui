@@ -6,6 +6,8 @@
   --text-primary: #f1f1f1;
   --el-grey: rgb(48, 48, 48);
   --bl-grey: rgba(255, 255, 255, 0.1);
+  --hover-sign-in: rgba(62, 165, 255, 0.2);
+  --hover: rgba(255, 255, 255, 0.1);
 }
 
 html {
@@ -82,6 +84,12 @@ body {
 
 #menu {
   padding: 8px;
+}
+
+#menu:hover {
+  background-color: var(--hover);
+  border: none;
+  border-radius: 100%;
 }
 
 #logoIcon {
@@ -199,6 +207,11 @@ body {
   align-self: center;
 }
 
+#microphone:hover {
+  background-color: var(--hover);
+  cursor: pointer;
+}
+
 #group-user {
   display: flex;
   align-items: center;
@@ -213,7 +226,7 @@ body {
 
 #settings img {
   align-self: center;
-  height: 16px;
+  height: 24px;
   margin-right: 20px;
 }
 
@@ -225,6 +238,11 @@ body {
   border-radius: 25px;
   align-self: center;
   justify-content: center;
+}
+
+.sign-in:hover {
+  background-color: var(--hover-sign-in);
+  border: 1px solid rgba(0, 0, 0, 0);
 }
 
 .sign-in-png {

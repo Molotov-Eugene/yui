@@ -43,3 +43,20 @@ $( document ).ready( () => {
   };
   loadHomePage();
 } );
+
+//Let's style it
+
+const setActive = (e) => {
+  console.log('hi')
+  console.log(e);
+}
+
+$('#logoIcon > *').click(function() {
+  window.location.href = './'
+}).css('cursor', 'pointer');
+
+const links = document.getElementsByClassName('link');
+
+for (let el of links) {
+  console.log(el)
+}

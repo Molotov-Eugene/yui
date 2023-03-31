@@ -5,7 +5,7 @@ const age = `${
 const vidos = {
   userName: "Agent Smith",
   userAvatar: "src/video/user-avatar.png",
-  videoTitle: `Rabbit${" rabbit".repeat( 20 )}`,
+  videoTitle: `Rabbit${" and apple, rabbit".repeat( 20 )}`,
   views: "849.6M views",
   subscribers: "999K subscribers",
   likesCount: "800K",
