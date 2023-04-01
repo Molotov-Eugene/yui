@@ -31,6 +31,7 @@ body {
 }
 
 #main-content {
+  position: fixed;
   display: flex;
   overflow: hidden;
   margin-top: 56px;
@@ -45,6 +46,7 @@ body {
 #headerNav {
   display: flex;
   position: fixed;
+  top: 0;
   width: calc(100vw - 32px);
   height: 56px;
   max-height: 56px;
@@ -83,6 +85,8 @@ body {
 }
 
 #menu {
+  min-width: 24px;
+  min-height: 24px;
   padding: 8px;
 }
 
@@ -222,6 +226,7 @@ body {
 #settings {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 #settings img {
@@ -243,6 +248,7 @@ body {
 .sign-in:hover {
   background-color: var(--hover-sign-in);
   border: 1px solid rgba(0, 0, 0, 0);
+  cursor: pointer;
 }
 
 .sign-in-png {

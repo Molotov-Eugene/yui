@@ -73,6 +73,7 @@
   border: none;
   border-radius: 100%;
   background-color: var(--el-grey);
+  cursor: pointer;
 }
 
 .d-user-info {
@@ -87,6 +88,7 @@
   font-weight: 500;
   color: var(--text-primary);
   text-overflow: ellipsis;
+  cursor: pointer;
 }
 
 .d-user-subs {
@@ -109,6 +111,11 @@
   font-stretch: 100%;
   font-weight: 500;
   line-height: 36px;
+  cursor: pointer;
+}
+
+.subscribe-button:hover {
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .d-right {
@@ -122,7 +129,6 @@
   max-height: 36px;
 }
 
-.d-likes,
 .d-share,
 .d-more,
 .d-save {
@@ -138,6 +144,57 @@
   border: none;
   border-radius: 25px;
   background-color: var(--bl-grey);
+  cursor: pointer;
+}
+
+.d-likes {
+  margin: 0 3px;
+  padding: 0 16px;
+  min-height: 36px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+  max-height: 36px;
+}
+
+.d-like {
+  border: none;
+  background-color: var(--bl-grey);
+  padding-left: 16px;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  height: 100%;
+}
+
+.d-dislike {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  border: none;
+  background-color: var(--bl-grey);
+  padding-left: 16px;
+  padding-right: 16px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  margin: 0;
+  height: 100%;
+}
+
+.d-like:hover,
+.d-dislike:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.d-share:hover,
+.d-more:hover,
+.d-save:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .d-like {
@@ -147,9 +204,9 @@
   align-items: center;
 }
 
-.d-dislike {
-  margin-left: 16px;
-}
+/* .d-dislike { */
+/*   margin-left: 16px; */
+/* } */
 
 .d-like img,
 .d-dislike img,
@@ -188,17 +245,23 @@
   border: none;
   border-radius: 10px;
   background-color: var(--bl-grey);
+  cursor: pointer;
 }
 
 .d-description-box-wrapper {
   margin: 12px;
-  color: var(--text-primary)
+  color: var(--text-primary);
 }
+
+.d-description-box:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
 
 .d-box-head {
   font-size: 14px;
   line-height: 20px;
-  font-weight: 500;
+  font-weight: 500el-grey;
 }
 
 .d-box-text {
@@ -239,7 +302,8 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-content: flex-start;
+  align-content: center;
+  cursor: pointer;
 }
 
 #sort-by img {
@@ -249,8 +313,9 @@
 }
 
 #sort-by span {
+  align-self: center;
   font-size: 14px;
-  font-weight:4500;
+  font-weight: 400;
 }
 
 #c-input {
@@ -266,6 +331,7 @@
   margin-right: 16px;
   width: 40px;
   height: 40px;
+  min-width: 40px;
   border: none;
   border-radius: 100%;
   background-color: var(--el-grey);
@@ -322,6 +388,11 @@
   background-color: var(--el-grey);
 }
 
+.user-avatar-comment:hover,
+.user-name > *:hover {
+  cursor: pointer;
+}
+
 .user-avatar-comment img {
   width: 40px;
   height: 40px;
@@ -361,6 +432,11 @@
   color: rgb(170, 170, 170);
 }
 
+.comment-age:hover {
+  color: var(--text-primary);
+  transition: 0.3s;
+}
+
 .user-actions {
   display: flex;
   flex-direction: row;
@@ -383,6 +459,8 @@
 }
 
 .reply {
+  margin-left: 8px;
+  padding: 0 12px;
   font-size: 12px;
   font-weight: 500;
   color: var(--text-primary);
@@ -391,18 +469,34 @@
 .like, .dislike {
   width: 30px;
   height: 30px;
-  border: 1px solid rgba(0, 0, 0, 0);
+  border: none;
 }
 
+.like {
+  margin-left: -6px;
+}
+
+
 .like img, .dislike img {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
 }
 
 .like, .dislike, .reply {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   align-content: center;
+}
+
+.like:hover,
+.dislike:hover,
+.reply:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.18);
+  border: none;
+  border-radius: 25px;
 }
 
 .card-suggestion {
@@ -411,10 +505,19 @@
 }
 
 .suggestion-options {
+  display: flex;
+  flex-wrap: wrap;
+  width: 24px;
+  min-width: 24px;
+  height: 24px;
+}
+
+.suggestion-options-img {
+  display: none;
   width: 24px;
   height: 24px;
-  display: flex;
 }
+
 
 .suggestion-cover {
   display: flex;
@@ -476,4 +579,9 @@
 .suggestion-age::before {
   content: '•';
   margin-left: 4px;
+}
+
+.suggestion-cover,
+.suggestion-description {
+  cursor: pointer;
 }

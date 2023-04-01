@@ -7,56 +7,85 @@ import {
   videoDescription,
 } from "./elements.js";
 
-const loadVideoPage = () => {
-  $.get( "video.html", ( data ) => {
-    $( "#main-content" ).empty().html( data );
-    $( "#video-suggestion-box" ).html( suggestionCard( vidos ).repeat( 35 ) );
-    $( "#comments-box" ).html( comment( ucomment ).repeat( 11 ) );
-    $( "#video-description" ).html( videoDescription( vidos ) );
-    window.history.pushState( { html: data, pageTitle: "vidos" }, "", "video.html" );
-  } );
-};
+if (document.title === 'Rabbit') {
+  const suggestionBoxElement = document.querySelector('#video-suggestion-box');
+  const commentsBoxElement = document.querySelector('#comments-box');
+  const videoDescriptionElement = document.querySelector('#video-description');
 
-const loadHomePage = () => {
-  $.get( "home.html", ( data ) => {
-    $( "#main-content" ).empty().html( data );
-    $( "#previews" ).html( $( videoCard( vidos ).repeat( 12 ) ) );
-    $( ".card-video" ).click( loadVideoPage );
-    $( ".card-video" ).css( "cursor", "pointer" )
-    const innerHtml = document.getElementById( "main-content" ).innerHTML;
-    window.history.pushState( { html: innerHtml, pageTitle: "home" }, "", "" );
-  } );
-};
-
-$( document ).ready( () => {
-  window.onpopstate = ( e ) => {
-    switch ( e.state.pageTitle ) {
-      case "home":
-        loadHomePage();
-        break;
-      case "vidos":
-        loadVideoPage();
-        break;
-      default:
-        console.warn( "unknown page title" );
-    }
-  };
-  loadHomePage();
-} );
-
-//Let's style it
-
-const setActive = (e) => {
-  console.log('hi')
-  console.log(e);
+  suggestionBoxElement.innerHTML = suggestionCard(vidos).repeat(35);
+  commentsBoxElement.innerHTML = comment(ucomment).repeat(11);
+  videoDescriptionElement.innerHTML = videoDescription(vidos);
 }
+
+if (document.title === 'YouTube') {
+  const previewsElement = document.querySelector('#previews');
+  previewsElement.innerHTML = videoCard(vidos).repeat(12);
+}
+
+//Let's do some pretty stuff
 
 $('#logoIcon > *').click(function() {
   window.location.href = './'
 }).css('cursor', 'pointer');
 
-const links = document.getElementsByClassName('link');
+const links = document.querySelectorAll('.link');
 
-for (let el of links) {
-  console.log(el)
-}
+links.forEach((link) => {
+  link.addEventListener('click', (l) => {
+    links.forEach((l) => l.classList.remove('active'));
+    link.classList.add('active');
+  })
+});
+
+const tags = document.querySelectorAll('.tag-link');
+
+tags.forEach((tag) => {
+  tag.addEventListener('click', (l) => {
+    tags.forEach((l) => l.classList.remove('active'));
+    tag.classList.add('active');
+  })
+});
+
+const videos = document.querySelectorAll('.video-title-box, .video-cover-box');
+
+videos.forEach((el) => {
+  el.addEventListener('click', () => {
+    window.location.href = 'video.html';
+  })
+});
+
+const menu = document.querySelector('#menu');
+
+menu.addEventListener('click', function() {
+  document.querySelector('#block-aside').classList.toggle('hide');
+  document.querySelector('#block-aside-short').classList.toggle('hide');
+});
+
+const vieoDescriptionBlock = document.querySelectorAll('.video-description-block');
+
+vieoDescriptionBlock.forEach((block) => {
+  block.addEventListener('mouseover', () => {
+    block.querySelector('.video-options img').style.display = "flex";
+  });
+  block.addEventListener('mouseout', ()=> {
+    block.querySelector('.video-options img').style.display = "none";
+  });
+});
+
+const cardSuggestion = document.querySelectorAll('.card-suggestion');
+
+cardSuggestion.forEach((options) => {
+  options.addEventListener('mouseover', () => {
+    options.querySelector('.suggestion-options-img').style.display = "flex";
+  });
+  options.addEventListener('mouseout', () => {
+    options.querySelector('.suggestion-options-img').style.display = "none";
+  });
+});
+
+cardSuggestion.forEach((card) => {
+  card.addEventListener('click', () => {
+    window.location.href = 'video.html';
+  });
+});
+

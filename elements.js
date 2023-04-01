@@ -101,7 +101,7 @@ const videoCard = ( v ) => `
         </span>
       </div>
       <div class="video-meta-box">
-        <div class="user-name">
+        <div class="v-user-name">
           ${v.userName}
         </div>
         <div class="video-meta">
@@ -147,7 +147,7 @@ const suggestionCard = ( v ) => `
       </div>
     </div>
     <div class="suggestion-options">
-      <img class="suggestion-options invert" src="src/img/vertical-dots.png" alt="options" />
+      <img class="suggestion-options-img invert" src="src/img/vertical-dots.png" alt="options" />
     </div>
   </div>
 </div>`;
